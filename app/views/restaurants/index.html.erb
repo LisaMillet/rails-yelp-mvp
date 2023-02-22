@@ -2,14 +2,15 @@
 
     <ul class="row">
       <% @restaurants.each do |restaurant| %>
-        <div class="col-4">
-          <h2 class="mb-1 bg-black text-white text-center p-1"><%=restaurant.name%></h2>
-          <p class="mb-1"><%=restaurant.address%></p>
-          <p class="mb-1"><%=restaurant.phone_number%></p>
-          <p class="mb-1"><%=restaurant.category%></p>
-          <%= link_to "See details", restaurant_path(restaurant), class: "mb-3 btn btn-secondary"%>
+        <div class="card col-3">
+          <img src="https://loremflickr.com/320/240/restaurant" class="card-img-top" alt="#{restaurant.name}">
+          <div class="card-body">
+            <h2 class="card-title bg-secondary bg-black text-white text-center p-1"><%=restaurant.name%></h2>
+            <p class="card-text"><%=restaurant.address%></p>
+            <p class="card-text"><%=restaurant.phone_number%></p>
+            <p class="card-text text-capitalize"><%=restaurant.category%></p>
+            <%= link_to "See details", restaurant_path(restaurant), class: "mb-3 btn btn-secondary"%>
+          </div>
         </div>
       <% end %>
     </ul>
-
-<%= link_to "Add a restaurant", new_restaurant_path, class: "mb-3 btn btn-dark"%>
