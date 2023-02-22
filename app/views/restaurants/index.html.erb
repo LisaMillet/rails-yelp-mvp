@@ -1,8 +1,8 @@
 <h1 class="text-center mb-4">Voici tous les restaurants</h1>
 
-    <ul class="row">
+    <div class="row">
       <% @restaurants.each do |restaurant| %>
-        <div class="card col-3">
+        <div class="card col-3 mb-3">
           <img src="https://loremflickr.com/320/240/restaurant" class="card-img-top" alt="#{restaurant.name}">
           <div class="card-body">
             <h2 class="card-title bg-secondary bg-black text-white text-center p-1"><%=restaurant.name%></h2>
@@ -13,4 +13,4 @@
           </div>
         </div>
       <% end %>
-    </ul>
+    </div>
