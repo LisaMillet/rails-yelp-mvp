@@ -13,6 +13,12 @@
   </head>
 
   <body>
+  <div class="container">
+    <div>
+      <%= link_to "Add a restaurant", new_restaurant_path, class: "mb-3 btn btn-dark"%>
+      <%= link_to "Retour aux restaurants", restaurants_path(@restaurants), class: "mb-3 btn btn-dark" %>
+    </div>
     <%= yield %>
+  </div>
   </body>
 </html>

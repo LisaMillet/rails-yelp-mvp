@@ -1,0 +1,15 @@
+<h1 class="text-center mb-4">Voici tous les restaurants</h1>
+
+    <ul class="row">
+      <% @restaurants.each do |restaurant| %>
+        <div class="col-4">
+          <h2 class="mb-1 bg-black text-white text-center p-1"><%=restaurant.name%></h2>
+          <p class="mb-1"><%=restaurant.address%></p>
+          <p class="mb-1"><%=restaurant.phone_number%></p>
+          <p class="mb-1"><%=restaurant.category%></p>
+          <%= link_to "See details", restaurant_path(restaurant), class: "mb-3 btn btn-secondary"%>
+        </div>
+      <% end %>
+    </ul>
+
+<%= link_to "Add a restaurant", new_restaurant_path, class: "mb-3 btn btn-dark"%>

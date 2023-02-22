@@ -1,0 +1,12 @@
+<h1 class="bg-black text-white text-center p-1" >Welcome to <%=@restaurant.name%></h1>
+  <h2 class="bg-secondary text-white text-center p-1">Informations:</h2>
+    <p><%=@restaurant.address%></p>
+    <p><%=@restaurant.phone_number%></p>
+    <p><%=@restaurant.category%></p>
+  <h2 class="bg-secondary text-white text-center p-1">Reviews:</h2>
+    <% @restaurant.reviews.each do |review| %>
+    <p> <strong> <%= review.rating %> / 5 </strong>: <%= review.content %></p>
+    <% end %>
+
+
+  <%= render 'reviews/form', review: @review %>
